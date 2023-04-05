@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id "org.sonarqube" version "3.5.0.2730"
 }
 
 group 'by.urbel'
@@ -7,6 +8,14 @@ version '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
+}
+
+sonarqube {
+    properties {
+        property "sonar.projectKey", "urbeel_test"
+        property "sonar.organization", "urbeel"
+        property "sonar.host.url", "https://sonarcloud.io"
+    }
 }
 
 jar {
